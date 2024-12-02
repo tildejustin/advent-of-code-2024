@@ -1,8 +1,7 @@
 def is_safe(report):
-    nums = [int(num) for num in report.split()]
-    pos = nums[1] > nums[0]
-    last = nums[0]
-    for num in nums[1:]:
+    pos = report[1] > report[0]
+    last = report[0]
+    for num in report[1:]:
         if pos:
             if num < last:
                 return False
@@ -21,7 +20,14 @@ def is_safe(report):
 with open("input") as f:
     sum = 0
     for line in f.readlines():
-        if is_safe(line):
+        report = [int(num) for num in line.split()]
+        if is_safe(report):
             sum += 1
+        else:
+            for i in range(len(report)):
+                if is_safe(report[:i] + report[i + 1:]):
+                    sum += 1
+                    break
+            
     print(sum)
 
