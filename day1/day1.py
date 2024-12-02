@@ -15,6 +15,7 @@ print(sum)
 
 # part 2
 with open("input") as f:
+    # set shouldn't work but there are no duplicates in the left list
     a = set()
     b = []
     for l in f.readlines():
