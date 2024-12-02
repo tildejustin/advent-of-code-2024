@@ -16,7 +16,16 @@ def is_safe(report):
     return True
 
 
+# part 1
 
+with open("input") as f:
+    sum = 0
+    for line in f.readlines():
+        if is_safe(line):
+            sum += 1
+    print(sum)
+
+# part 2
 with open("input") as f:
     sum = 0
     for line in f.readlines():
