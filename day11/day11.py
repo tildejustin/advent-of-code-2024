@@ -15,7 +15,7 @@ for _ in range(25):
             first = int(stone_str[: stone_len // 2])
             second = int(stone_str[stone_len // 2 :])
             stones[i] = first
-            stones.insert(i + 1, second)
+            stones.append(second)
             i += 1
         i += 1
 
